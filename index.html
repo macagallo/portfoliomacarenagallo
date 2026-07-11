@@ -100,8 +100,8 @@
     .hero-badge::before{content:"";width:9px;height:9px;border-radius:50%;background:#25c26e;box-shadow:0 0 0 4px rgba(37,194,110,.18)}
     .hero h1{font-size:clamp(2.7rem,8vw,6rem);font-weight:700;color:var(--blue)}
     .hero .role{font-family:'Fredoka';font-weight:500;color:var(--coral);font-size:clamp(1.3rem,3.4vw,2.3rem);margin-top:.4rem;line-height:1.12}
-    .hero .subtitle{font-family:'Fredoka';font-weight:400;color:var(--ink-soft);font-size:clamp(1.05rem,2.2vw,1.35rem);margin-top:.75rem;line-height:1.3;max-width:34ch}
-    .hero .loc{margin-top:1.4rem;color:var(--ink-soft);font-weight:600;font-size:1.02rem;max-width:44ch}
+    .hero .subtitle{font-family:'Fredoka';font-weight:400;color:var(--ink-soft);font-size:clamp(1.02rem,2vw,1.22rem);margin-top:.85rem;line-height:1.4;max-width:52ch}
+    .hero .loc{margin-top:1.3rem;color:var(--ink-soft);font-weight:600;font-size:.82rem;letter-spacing:.01em;opacity:.85;max-width:44ch}
     .hero-cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.2rem}
     .btn{
       font-family:'Fredoka';font-weight:600;font-size:1rem;text-decoration:none;cursor:pointer;
@@ -139,11 +139,9 @@
     .card .desc{font-style:italic;color:var(--ink-soft);margin-bottom:1rem;font-size:1rem}
     .card p{color:var(--ink-soft);margin-bottom:1rem}
     .card-links{display:flex;flex-wrap:wrap;gap:1.2rem}
+    .excerpt{font-style:italic;color:var(--ink-soft);border-left:3px solid var(--coral);padding:.3rem 0 .3rem 1.1rem;margin:0 0 1.1rem;font-size:1rem;line-height:1.55}
     .serv h3{font-size:clamp(1.25rem,2.6vw,1.6rem);margin-bottom:.6rem}
     .serv p{margin-bottom:0}
-
-    /* ---- Impact band ---- */
-    .band{background:var(--bg-tint);border-radius:26px;padding:clamp(2rem,5vw,3.5rem)}
 
     /* ---- Campaigns ---- */
     .camp-list{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem}
@@ -154,24 +152,8 @@
     /* ---- Numbers ---- */
     .num-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
     .num{background:var(--bg-tint);border-radius:20px;padding:1.8rem;border:1px solid rgba(15,128,242,.1)}
-    .num .big{font-family:'Fredoka';font-weight:700;font-size:clamp(2.2rem,5vw,3.2rem);color:var(--coral);line-height:1;margin-bottom:.6rem}
+    .num .big{font-family:'Fredoka';font-weight:700;font-size:clamp(1.9rem,4.4vw,2.9rem);color:var(--coral);line-height:1.05;margin-bottom:.6rem}
     .num p{color:var(--ink-soft);font-size:.98rem}
-
-    /* ---- Method ---- */
-    .chips{display:flex;flex-wrap:wrap;gap:.8rem;margin:1.8rem 0}
-    .chip{font-family:'Fredoka';font-weight:600;color:var(--blue);border:2px solid var(--blue);border-radius:999px;padding:.5rem 1.4rem;font-size:1.05rem}
-    .worklist{list-style:none;margin-top:.5rem}
-    .worklist li{
-      font-family:'Fredoka';font-weight:500;font-size:clamp(1.15rem,2.4vw,1.5rem);color:var(--ink);
-      padding:.7rem 0 .7rem 2.2rem;position:relative;border-bottom:1px dashed rgba(15,128,242,.2)
-    }
-    .worklist li::before{content:"→";position:absolute;left:0;color:var(--coral);font-weight:700}
-
-    /* ---- Quote band (blue full bleed) ---- */
-    .quote{background:var(--blue);color:#fff;text-align:left}
-    .quote .vlabel{color:#bcdcff}
-    .quote .qtext{font-family:'Fredoka';font-weight:600;font-size:clamp(1.8rem,5vw,3.4rem);line-height:1.12;max-width:20ch}
-    .quote .qtext .soft{color:#bcdcff;display:block;margin-top:1rem}
 
     /* ---- Next / closing ---- */
     .tagline{
@@ -234,11 +216,10 @@
     <div style="display:flex;align-items:center;gap:1rem">
       <div class="nav-links" id="navlinks">
         <a href="#about" data-i18n="nav-about">Sobre mí</a>
+        <a href="#numbers" data-i18n="nav-num">Datos</a>
+        <a href="#services" data-i18n="nav-serv">Servicios</a>
         <a href="#experience" data-i18n="nav-exp">Experiencia</a>
         <a href="#campaigns" data-i18n="nav-camp">Campañas</a>
-        <a href="#services" data-i18n="nav-serv">Servicios</a>
-        <a href="#numbers" data-i18n="nav-num">Datos</a>
-        <a href="#method" data-i18n="nav-meth">Método</a>
         <a href="#contact" data-i18n="nav-contact">Contacto</a>
       </div>
       <button class="lang-btn" id="langBtn" aria-label="Change language">EN</button>
@@ -256,7 +237,7 @@
             <span class="hero-badge" data-i18n="hero-badge">Disponible para nuevos proyectos</span>
             <h1>Macarena Gallo<br>Fuenzalida</h1>
             <p class="role" data-i18n="hero-role">Periodista cultural y estratega en comunicación institucional</p>
-            <p class="subtitle" data-i18n="hero-tagline">Quince años contando lo que importa y haciendo que llegue.</p>
+            <p class="subtitle" data-i18n="hero-tagline">Periodista con demasiada curiosidad para quedarse en un solo tema. Pasé de cubrir cultura a traducir causas complejas en algo que la gente quiere leer. Con humor cuando se puede, con datos cuando se debe.</p>
             <p class="loc" data-i18n="hero-loc">Santiago de Chile · En proceso de traslado a Madrid · Disponible para trabajo presencial en España o remoto LAC / internacional</p>
             <div class="hero-cta">
               <a href="#experience" class="btn btn-primary" data-i18n="hero-cta1">Ver mi trabajo</a>
@@ -283,6 +264,47 @@
               <p data-i18n="about-p1">Me interesa contar historias que incomoden, que abran preguntas y acerquen lo político a lo humano.</p>
               <p data-i18n="about-p2">Empecé en redacciones donde la ironía era una forma de resistencia y hoy trabajo en espacios donde la comunicación es también una forma de cuidado político. Entre ambos mundos aprendí que lo más difícil no es tener algo que decir — es saber cómo decirlo para que le importe a alguien que no estaba buscándolo.</p>
               <p data-i18n="about-p3">Soy periodista y editora con más de quince años de experiencia entre medios, proyectos culturales y organizaciones sociales. Busco que la información no solo circule, sino que tenga efecto: claridad sin simplificar y profundidad sin rigidez.</p>
+              <p data-i18n="about-p4">Siempre digo que soy periodista. No comunicadora estratégica, no content manager, no community builder. Periodista. Porque al final, detrás de todas las siglas y las plataformas, el trabajo sigue siendo el mismo: encontrar la mejor manera de que algo llegue a alguien. Eso es lo que hago, con las herramientas que existan.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NUMBERS -->
+    <section id="numbers">
+      <div class="wrap">
+        <div class="sec-grid">
+          <div class="vlabel" data-i18n="num-label">Los datos también cuentan historias</div>
+          <div class="reveal">
+            <span class="kicker" data-i18n="num-label">Los datos también cuentan historias</span>
+            <div class="num-grid">
+              <div class="num"><div class="big">+2.150%</div><p data-i18n="d1">de crecimiento digital orgánico — de 6.000 a 135.000 seguidores.</p></div>
+              <div class="num"><div class="big">+1,2M</div><p data-i18n="d2">de impresiones mensuales.</p></div>
+              <div class="num"><div class="big" data-i18n="d3n">Prensa global</div><p data-i18n="d3">cobertura en NYT, BBC, The Guardian y CNN.</p></div>
+              <div class="num"><div class="big">2×</div><p data-i18n="d4">finalista del Premio Periodismo de Excelencia UAH — máximo reconocimiento gremial del periodismo chileno.</p></div>
+              <div class="num"><div class="big" data-i18n="d5n">Courrier Int.</div><p data-i18n="d5">publicada en Courrier International (París, 2009).</p></div>
+              <div class="num"><div class="big" data-i18n="d6n">Beca IWMF</div><p data-i18n="d6">2023–2024 · International Women's Media Foundation.</p></div>
+              <div class="num"><div class="big" data-i18n="d7n">4 países</div><p data-i18n="d7">investigaciones periodísticas coordinadas en la región.</p></div>
+              <div class="num"><div class="big">15+</div><p data-i18n="d8">años de experiencia en periodismo y comunicación institucional.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="wrap">
+        <div class="sec-grid">
+          <div class="vlabel coral" data-i18n="serv-label">Qué puedo hacer</div>
+          <div class="reveal">
+            <span class="kicker coral" data-i18n="serv-label">Qué puedo hacer</span>
+            <div class="cards serv-grid">
+              <article class="card serv"><h3 data-i18n="serv1-t">Comunicación estratégica</h3><p data-i18n="serv1-b">Diseño narrativas, mensajes clave y posicionamiento institucional para organizaciones que necesitan que su trabajo sea visto y entendido.</p></article>
+              <article class="card serv"><h3 data-i18n="serv2-t">Estrategia de contenidos y crecimiento digital</h3><p data-i18n="serv2-b">Desarrollé y ejecuté estrategias de contenido orgánico para organizaciones que necesitan crecer sin depender de pauta. Solo contenido con criterio editorial y conocimiento de plataformas.</p></article>
+              <article class="card serv"><h3 data-i18n="serv3-t">Campañas e incidencia digital</h3><p data-i18n="serv3-b">Conceptualizo y desarrollo campañas que buscan instalar conversaciones, no solo generar clics.</p></article>
+              <article class="card serv"><h3 data-i18n="serv4-t">Comunicación de temas complejos</h3><p data-i18n="serv4-b">Traduzco evidencia, investigaciones y políticas públicas en mensajes que la gente pueda leer, entender y usar.</p></article>
             </div>
           </div>
         </div>
@@ -303,6 +325,7 @@
                 <p class="desc" data-i18n="clinic-desc">Revista de periodismo satírico y político, referente en cultura y opinión en América Latina.</p>
                 <p data-i18n="clinic-body">Escribí, edité e investigué sobre cultura y política durante doce años — los primeros diez como periodista y los últimos dos como editora de la sección. Dos de mis reportajes fueron finalistas del Premio de Excelencia Periodística UAH (2008 y 2016). Uno de ellos, «El hombre del cartel», fue traducido al francés y publicado en Courrier International (Grupo Le Monde, París, 2009), adaptado para teatro, cómic y es hoy la base de un guion cinematográfico en desarrollo.</p>
                 <p data-i18n="clinic-body2">De esa etapa conservo el gusto por las historias que cuestionan y la escritura con identidad.</p>
+                <blockquote class="excerpt" data-i18n="clinic-excerpt">«Rubén Araya está arriba de un cartel caminero enorme, de más de 16 metros de alto, desde donde se disfruta de una vista impresionante. Abajo corre el río Mapocho, turbio y torrentoso. En la otra ribera está la Costanera y los autos no paran un segundo de pasar. El aviso está sobre el Parque de los Reyes y cuando no hay contaminación, la cordillera se ve enorme. Rubén vive en el otro lado de ese mensaje, en una casucha de un metro por dos.»</blockquote>
                 <div class="card-links">
                   <a class="link" href="https://www.theclinic.cl/author/gallo/" target="_blank" rel="noopener" data-i18n="clinic-link">Leer mis notas en The Clinic →</a>
                   <a class="link" href="https://www.courrierinternational.com/article/2009/02/26/coca-cola-c-est-aussi-ca" target="_blank" rel="noopener" data-i18n="clinic-link2">«El hombre del cartel» en Courrier International →</a>
@@ -360,86 +383,6 @@
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services">
-      <div class="wrap">
-        <div class="sec-grid">
-          <div class="vlabel coral" data-i18n="serv-label">Qué puedo hacer</div>
-          <div class="reveal">
-            <span class="kicker coral" data-i18n="serv-label">Qué puedo hacer</span>
-            <div class="cards serv-grid">
-              <article class="card serv"><h3 data-i18n="serv1-t">Comunicación estratégica</h3><p data-i18n="serv1-b">Diseño narrativas, mensajes clave y posicionamiento institucional para organizaciones que necesitan que su trabajo sea visto y entendido.</p></article>
-              <article class="card serv"><h3 data-i18n="serv2-t">Contenidos con propósito</h3><p data-i18n="serv2-b">Investigo, edito y produzco contenidos para públicos diversos — desde informes técnicos hasta piezas digitales — sin perder la voz en el camino.</p></article>
-              <article class="card serv"><h3 data-i18n="serv3-t">Campañas e incidencia digital</h3><p data-i18n="serv3-b">Conceptualizo y desarrollo campañas que buscan instalar conversaciones, no solo generar clics.</p></article>
-              <article class="card serv"><h3 data-i18n="serv4-t">Comunicación de temas complejos</h3><p data-i18n="serv4-b">Traduzco evidencia, investigaciones y políticas públicas en mensajes que la gente pueda leer, entender y usar.</p></article>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- NUMBERS -->
-    <section id="numbers">
-      <div class="wrap">
-        <div class="sec-grid">
-          <div class="vlabel" data-i18n="num-label">Los datos también cuentan historias</div>
-          <div class="reveal">
-            <span class="kicker" data-i18n="num-label">Los datos también cuentan historias</span>
-            <div class="num-grid">
-              <div class="num"><div class="big">15+</div><p data-i18n="num1">años de experiencia en comunicación, periodismo y estrategia de contenidos.</p></div>
-              <div class="num"><div class="big">2×</div><p data-i18n="num2">finalista del Premio de Excelencia Periodística UAH (2008 y 2016).</p></div>
-              <div class="num"><div class="big">The Clinic</div><p data-i18n="num3">edición cultural en una revista con más de 2 millones de seguidores.</p></div>
-              <div class="num"><div class="big">+2.150%</div><p data-i18n="num4">de crecimiento digital en Miles Chile (2019–2025).</p></div>
-              <div class="num"><div class="big">+1,2M</div><p data-i18n="num5">de impresiones mensuales en Miles Chile.</p></div>
-              <div class="num"><div class="big" data-i18n="num7-n">Beca IWMF</div><p data-i18n="num7">(2023–2024) International Women's Media Foundation · investigación regional en Chile, Perú, México y Brasil.</p></div>
-              <div class="num"><div class="big" data-i18n="num8-n">Courrier Int.</div><p data-i18n="num8">publicada en Courrier International (Grupo Le Monde, París): traducción al francés de «El hombre del cartel».</p></div>
-              <div class="num"><div class="big" data-i18n="num6-n">Obras</div><p data-i18n="num6">propias adaptadas a teatro y cómic.</p></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- METHOD -->
-    <section id="method">
-      <div class="wrap">
-        <div class="sec-grid">
-          <div class="vlabel" data-i18n="meth-label">Cómo entiendo la comunicación</div>
-          <div class="reveal">
-            <span class="kicker" data-i18n="meth-label">Cómo entiendo la comunicación</span>
-            <div class="body-col">
-              <p data-i18n="meth-body">Empecé en redacciones donde la ironía era una herramienta de trabajo y terminé en organizaciones donde comunicar bien es también una decisión política. En ese recorrido aprendí que lo más difícil no es tener algo que decir — es saber cómo decirlo para que le importe a alguien que no estaba buscándolo. Eso es lo que hago: traduzco lo complejo en algo que se entiende, se recuerda y mueve.</p>
-            </div>
-            <div class="chips">
-              <span class="chip" data-i18n="chip1">Estrategia</span>
-              <span class="chip" data-i18n="chip2">Narrativa</span>
-              <span class="chip" data-i18n="chip3">Incidencia</span>
-            </div>
-            <div class="kickline coral" style="margin-top:2rem" data-i18n="work-label">Cómo trabajo</div>
-            <ul class="worklist">
-              <li data-i18n="w1">Escuchar antes de escribir.</li>
-              <li data-i18n="w2">Traducir antes de difundir.</li>
-              <li data-i18n="w3">Usar los datos para contar, no solo para informar.</li>
-              <li data-i18n="w4">Trabajar desde el criterio editorial, no desde el algoritmo.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- QUOTE BAND -->
-    <section class="quote" id="quote">
-      <div class="wrap">
-        <div class="sec-grid">
-          <div class="vlabel" data-i18n="quote-label">En simple</div>
-          <div class="reveal">
-            <span class="kicker" style="color:#bcdcff;border-color:#bcdcff" data-i18n="quote-label">En simple</span>
-            <p class="qtext" data-i18n="quote-text">Periodista de fondo, estratega por necesidad.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- NEXT -->
     <section id="next">
       <div class="wrap">
@@ -489,10 +432,10 @@
   <script>
     /* ---------- English dictionary (Spanish lives in the HTML) ---------- */
     const EN = {
-      "nav-about":"About","nav-exp":"Experience","nav-camp":"Campaigns","nav-serv":"Services","nav-num":"Numbers","nav-meth":"Approach","nav-contact":"Contact",
+      "nav-about":"About","nav-num":"Numbers","nav-serv":"Services","nav-exp":"Experience","nav-camp":"Campaigns","nav-contact":"Contact",
       "hero-badge":"Available for new projects",
       "hero-role":"Cultural journalist and strategist in institutional communication",
-      "hero-tagline":"Fifteen years telling what matters — and making sure it lands.",
+      "hero-tagline":"A journalist too curious to stick to a single topic. I went from covering culture to translating complex causes into something people actually want to read. With humor when possible, with data when necessary.",
       "hero-loc":"Santiago, Chile · Relocating to Madrid · Available for on-site work in Spain or remote LATAM / international",
       "hero-cta1":"See my work","hero-cta2":"Get in touch",
       "about-label":"What drives me",
@@ -500,11 +443,27 @@
       "about-p1":"I want to tell stories that unsettle, that open questions and bring the political closer to the human.",
       "about-p2":"I started out in newsrooms where irony was a form of resistance, and today I work in spaces where communication is also a form of political care. Between those two worlds I learned that the hardest part isn't having something to say — it's knowing how to say it so that it matters to someone who wasn't looking for it.",
       "about-p3":"I'm a journalist and editor with more than fifteen years of experience across media, cultural projects and social organizations. I want information not just to circulate, but to have an effect: clarity without oversimplifying, depth without rigidity.",
+      "about-p4":"I always say I'm a journalist. Not a strategic communicator, not a content manager, not a community builder. A journalist. Because in the end, behind all the acronyms and platforms, the work is still the same: finding the best way for something to reach someone. That's what I do, with whatever tools exist.",
+      "num-label":"The numbers tell stories too",
+      "d1":"in organic digital growth — from 6,000 to 135,000 followers.",
+      "d2":"in monthly impressions.",
+      "d3n":"Global press","d3":"coverage in NYT, BBC, The Guardian and CNN.",
+      "d4":"finalist for the UAH Journalism Excellence Award — the highest peer recognition in Chilean journalism.",
+      "d5n":"Courrier Int.","d5":"published in Courrier International (Paris, 2009).",
+      "d6n":"IWMF Fellow","d6":"2023–2024 · International Women's Media Foundation.",
+      "d7n":"4 countries","d7":"journalistic investigations coordinated across the region.",
+      "d8":"years of experience in journalism and institutional communication.",
+      "serv-label":"What I can do",
+      "serv1-t":"Strategic communication","serv1-b":"I design narratives, key messages and institutional positioning for organizations that need their work to be seen and understood.",
+      "serv2-t":"Content strategy & digital growth","serv2-b":"I developed and executed organic content strategies for organizations that need to grow without relying on paid ads — just content with editorial judgment and platform know-how.",
+      "serv3-t":"Campaigns and digital advocacy","serv3-b":"I conceptualize and develop campaigns that aim to spark conversations, not just generate clicks.",
+      "serv4-t":"Communicating complex topics","serv4-b":"I translate evidence, research and public policy into messages that people can read, understand and use.",
       "exp-label":"Career",
       "clinic-label":"Where I learned the craft.",
       "clinic-desc":"A satirical and political journalism magazine, a cultural and opinion reference in Latin America.",
       "clinic-body":"I wrote, edited and investigated culture and politics for twelve years — the first ten as a journalist and the last two as section editor. Two of my features were finalists for the UAH Journalistic Excellence Award (2008 and 2016). One of them, «El hombre del cartel», was translated into French and published in Courrier International (Le Monde Group, Paris, 2009), adapted for theatre and comic, and is now the basis of a film script in development.",
       "clinic-body2":"From that period I keep a taste for stories that question and writing with identity.",
+      "clinic-excerpt":"«Rubén Araya is up on a huge roadside billboard, more than 16 metres high, with a breathtaking view. Below runs the Mapocho river, murky and rushing. On the far bank is the Costanera, where the cars never stop for a second. The billboard stands over Parque de los Reyes, and when there's no smog the mountain range looks immense. Rubén lives on the other side of that message, in a shack one metre by two.»",
       "clinic-link":"Read my pieces in The Clinic →",
       "clinic-link2":"«El hombre del cartel» in Courrier International →",
       "clinic-link3":"The comic →",
@@ -522,34 +481,13 @@
       "camp1-b":"From social media to Lollapalooza Chile 2023: the first NGO to place an anti-harassment message at a massive festival. Replicated at Bresh parties, reaching young audiences beyond the digital sphere.",
       "camp2-t":"Faulty contraceptives case (2020)",
       "camp2-b":"A press and social media strategy that made visible the harm to more than 200 women. Coverage in The New York Times, The Guardian and CNN.",
-      "serv-label":"What I can do",
-      "serv1-t":"Strategic communication","serv1-b":"I design narratives, key messages and institutional positioning for organizations that need their work to be seen and understood.",
-      "serv2-t":"Content with purpose","serv2-b":"I research, edit and produce content for diverse audiences — from technical reports to digital pieces — without losing the voice along the way.",
-      "serv3-t":"Campaigns and digital advocacy","serv3-b":"I conceptualize and develop campaigns that aim to spark conversations, not just generate clicks.",
-      "serv4-t":"Communicating complex topics","serv4-b":"I translate evidence, research and public policy into messages that people can read, understand and use.",
-      "num-label":"The numbers tell stories too",
-      "num1":"years of experience in communication, journalism and content strategy.",
-      "num2":"finalist for the UAH Journalistic Excellence Award (2008 &amp; 2016).",
-      "num3":"cultural editing at a magazine with more than 2 million followers.",
-      "num4":"digital growth at Miles Chile (2019–2025).",
-      "num5":"in monthly impressions at Miles Chile.",
-      "num6-n":"Works","num6":"of my own adapted to theatre and comics.",
-      "num7-n":"IWMF Fellow","num7":"(2023–2024) International Women's Media Foundation · regional research in Chile, Peru, Mexico and Brazil.",
-      "num8-n":"Courrier Int.","num8":"published in Courrier International (Le Monde Group, Paris): French translation of «El hombre del cartel».",
-      "meth-label":"How I understand communication",
-      "meth-body":"I started out in newsrooms where irony was a working tool and ended up in organizations where communicating well is also a political decision. Along the way I learned that the hardest part isn't having something to say — it's knowing how to say it so it matters to someone who wasn't looking for it. That's what I do: I translate the complex into something that is understood, remembered, and moves people.",
-      "chip1":"Strategy","chip2":"Narrative","chip3":"Advocacy",
-      "work-label":"How I work",
-      "w1":"Listen before writing.","w2":"Translate before broadcasting.","w3":"Use data to tell, not just to inform.","w4":"Work from editorial judgment, not from the algorithm.",
-      "quote-label":"In short",
-      "quote-text":"In-depth journalist, strategist out of necessity.",
       "next-label":"What's next",
       "next-body":"I look for projects where communicating well isn't a detail but a central decision. Media, social organizations, cultural institutions, international bodies — I'm drawn to spaces where words have real consequences and where editorial judgment matters as much as strategy.",
       "next-body2":"I'm in Santiago, Chile, relocating to Madrid, and open to on-site positions in Spain or remote roles for Latin America and international. If you have a project or an opening that fits, write to me.",
       "contact-label":"Contact",
       "contact-intro":"Have a project where communication matters? Write to me.",
       "contact-cta":"Let's talk",
-      "lab-phone":"Phone","lab-loc":"Location",
+      "lab-loc":"Location",
       "contact-loc":"Santiago, Chile · Relocating to Madrid · Available for on-site work in Spain or remote LATAM / international",
       "footer-made":"Made with","footer-place":"in Santiago, Chile",
       "footer-credit":"Original portfolio design by <strong>Fito Pérez</strong> · thank you!"
