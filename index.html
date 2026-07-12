@@ -142,6 +142,9 @@
     .excerpt{font-style:italic;color:var(--ink-soft);border-left:3px solid var(--coral);padding:.3rem 0 .3rem 1.1rem;margin:0 0 1.1rem;font-size:1rem;line-height:1.55}
     .serv h3{font-size:clamp(1.25rem,2.6vw,1.6rem);margin-bottom:.6rem}
     .serv p{margin-bottom:0}
+    .piece h3{font-size:clamp(1.12rem,2.3vw,1.4rem);color:var(--blue);margin-bottom:.5rem;line-height:1.18}
+    .see-all{display:flex;align-items:center;justify-content:center;text-align:center}
+    .see-all .link{white-space:normal}
 
     /* ---- Campaigns ---- */
     .camp-list{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem}
@@ -219,6 +222,7 @@
         <a href="#numbers" data-i18n="nav-num">Datos</a>
         <a href="#services" data-i18n="nav-serv">Servicios</a>
         <a href="#experience" data-i18n="nav-exp">Experiencia</a>
+        <a href="#writing" data-i18n="nav-writing">Escritos</a>
         <a href="#campaigns" data-i18n="nav-camp">Campañas</a>
         <a href="#contact" data-i18n="nav-contact">Contacto</a>
       </div>
@@ -361,6 +365,53 @@
       </div>
     </section>
 
+    <!-- WRITING -->
+    <section id="writing">
+      <div class="wrap">
+        <div class="sec-grid">
+          <div class="vlabel" data-i18n="wr-label">Lo que he escrito</div>
+          <div class="reveal">
+            <span class="kicker" data-i18n="wr-label">Lo que he escrito</span>
+            <div class="cards">
+              <article class="card piece">
+                <div class="card-label">The Clinic · 2008</div>
+                <h3>El hombre que vive en un aviso de Coca-Cola</h3>
+                <p data-i18n="wr1">Rubén Araya vive en una casucha de un metro por dos, detrás de un cartel caminero de Coca-Cola de 16 metros sobre el Parque de los Reyes. Un perfil desde los márgenes de la ciudad. Finalista del Premio de Excelencia Periodística UAH.</p>
+                <div class="card-links"><a class="link" href="https://www.theclinic.cl/2008/09/12/el-hombre-que-vive-en-un-aviso-de-coca-cola/" target="_blank" rel="noopener" data-i18n="wr-readfull">Leer completo →</a></div>
+              </article>
+              <article class="card piece">
+                <div class="card-label">The Clinic · 2016</div>
+                <h3>La herencia maldita de Manuel Contreras</h3>
+                <p data-i18n="wr2">Un reportaje sobre el legado del jefe de la DINA, la policía secreta de la dictadura de Pinochet. Finalista del Premio de Excelencia Periodística UAH 2016. Co-escrito con Jorge Rojas.</p>
+                <div class="card-links"><a class="link" href="https://www.theclinic.cl/2016/05/15/la-herencia-maldita-de-manuel-contreras/" target="_blank" rel="noopener" data-i18n="wr-readfull">Leer completo →</a></div>
+              </article>
+              <article class="card piece">
+                <div class="card-label">La Tercera · Culto · 2019</div>
+                <h3>Héctor Hernández Montecinos: «Siempre me he reconocido como un resentido»</h3>
+                <p data-i18n="wr3">Entrevista al poeta chileno a propósito de su novela «Los nombres propios».</p>
+                <div class="card-links"><a class="link" href="https://www.latercera.com/culto/2019/03/12/hector-hernandez-montecinos-entrevista/" target="_blank" rel="noopener" data-i18n="wr-readfull">Leer completo →</a></div>
+              </article>
+              <article class="card piece">
+                <div class="card-label">The Clinic · 2017</div>
+                <h3>Antes de llamarse Divino Anticristo: el último amor de José Pizarro Caravantes</h3>
+                <p data-i18n="wr4">Un perfil sobre la vida y el último amor de José Pizarro Caravantes, «Divino Anticristo».</p>
+                <div class="card-links"><a class="link" href="https://www.theclinic.cl/2017/10/19/llamarse-divino-anticristo-1953-2017-ultimo-amor-jose-pizarro-caravantes/" target="_blank" rel="noopener" data-i18n="wr-readfull">Leer completo →</a></div>
+              </article>
+              <article class="card piece">
+                <div class="card-label">El Desconcierto · 2020</div>
+                <h3>Los espías de Matthei en la primera línea</h3>
+                <p data-i18n="wr5">Una ex funcionaria municipal denuncia haber sido obligada a infiltrarse en la primera línea de las protestas en Plaza de la Dignidad.</p>
+                <div class="card-links"><a class="link" href="https://www.eldesconcierto.cl/2020/02/06/los-espias-de-matthei-en-la-primera-linea-ex-funcionaria-demanda-a-providencia-por-obligarla-a-infiltrarse-en-plaza-de-la-dignidad/" target="_blank" rel="noopener" data-i18n="wr-readfull">Leer completo →</a></div>
+              </article>
+              <article class="card piece see-all">
+                <a class="link" href="https://www.theclinic.cl/author/gallo/" target="_blank" rel="noopener" data-i18n="wr-all">Ver todas mis notas en The Clinic →</a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CAMPAIGNS -->
     <section id="campaigns">
       <div class="wrap">
@@ -432,7 +483,7 @@
   <script>
     /* ---------- English dictionary (Spanish lives in the HTML) ---------- */
     const EN = {
-      "nav-about":"About","nav-num":"Numbers","nav-serv":"Services","nav-exp":"Experience","nav-camp":"Campaigns","nav-contact":"Contact",
+      "nav-about":"About","nav-num":"Numbers","nav-serv":"Services","nav-exp":"Experience","nav-writing":"Writing","nav-camp":"Campaigns","nav-contact":"Contact",
       "hero-badge":"Available for new projects",
       "hero-role":"Cultural journalist and strategist in institutional communication",
       "hero-tagline":"A journalist too curious to stick to a single topic. I went from covering culture to translating complex causes into something people actually want to read. With humor when possible, with data when necessary.",
@@ -481,6 +532,14 @@
       "camp1-b":"From social media to Lollapalooza Chile 2023: the first NGO to place an anti-harassment message at a massive festival. Replicated at Bresh parties, reaching young audiences beyond the digital sphere.",
       "camp2-t":"Faulty contraceptives case (2020)",
       "camp2-b":"A press and social media strategy that made visible the harm to more than 200 women. Coverage in The New York Times, The Guardian and CNN.",
+      "wr-label":"What I've written",
+      "wr1":"Rubén Araya lives in a one-by-two-metre shack behind a 16-metre Coca-Cola billboard over Parque de los Reyes. A profile from the city's margins. Finalist for the UAH Journalistic Excellence Award.",
+      "wr2":"A report on the legacy of the head of the DINA, the secret police of Pinochet's dictatorship. Finalist for the UAH Journalistic Excellence Award, 2016. Co-written with Jorge Rojas.",
+      "wr3":"An interview with the Chilean poet on his novel «Los nombres propios».",
+      "wr4":"A profile of the life and last love of José Pizarro Caravantes, 'Divino Anticristo'.",
+      "wr5":"A former municipal employee says she was forced to infiltrate the front line of the Plaza de la Dignidad protests.",
+      "wr-readfull":"Read full piece →",
+      "wr-all":"See all my pieces in The Clinic →",
       "next-label":"What's next",
       "next-body":"I look for projects where communicating well isn't a detail but a central decision. Media, social organizations, cultural institutions, international bodies — I'm drawn to spaces where words have real consequences and where editorial judgment matters as much as strategy.",
       "next-body2":"I'm in Santiago, Chile, relocating to Madrid, and open to on-site positions in Spain or remote roles for Latin America and international. If you have a project or an opening that fits, write to me.",
