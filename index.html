@@ -80,12 +80,14 @@
     .nav-links{display:flex;gap:1.3rem;align-items:center}
     .nav-links a{font-size:.9rem;font-weight:700;color:var(--ink-soft);text-decoration:none;transition:color .2s}
     .nav-links a:hover{color:var(--blue)}
-    .lang-btn{
-      font-family:'Fredoka';font-weight:600;font-size:.82rem;cursor:pointer;
-      background:var(--blue);color:#fff;border:none;border-radius:999px;padding:.42rem .85rem;
-      letter-spacing:.03em;transition:background .2s,transform .15s
+    .lang-toggle{display:inline-flex;border:2px solid var(--blue);border-radius:999px;overflow:hidden}
+    .lang-opt{
+      font-family:'Fredoka';font-weight:600;font-size:.8rem;cursor:pointer;border:none;
+      background:transparent;color:var(--blue);padding:.35rem .7rem;letter-spacing:.03em;
+      transition:background .2s,color .2s
     }
-    .lang-btn:hover{background:var(--blue-deep);transform:translateY(-1px)}
+    .lang-opt.active{background:var(--blue);color:#fff}
+    .lang-opt:not(.active):hover{background:rgba(15,128,242,.12)}
     .menu-toggle{display:none;background:none;border:none;cursor:pointer;color:var(--blue);font-size:1.5rem;line-height:1}
 
     /* ---- Section scaffolding with vertical label ---- */
@@ -257,7 +259,10 @@
         <a href="#campaigns" data-i18n="nav-camp">Campañas</a>
         <a href="#contact" data-i18n="nav-contact">Contacto</a>
       </div>
-      <button class="lang-btn" id="langBtn" aria-label="Change language">EN</button>
+      <div class="lang-toggle" id="langToggle" role="group" aria-label="Idioma / Language">
+        <button type="button" class="lang-opt" data-lang="es">ES</button>
+        <button type="button" class="lang-opt" data-lang="en">EN</button>
+      </div>
       <button class="menu-toggle" id="menuToggle" aria-label="Menú">☰</button>
     </div>
   </nav>
@@ -618,16 +623,17 @@
         if(dict[key]!==undefined) n.setAttribute('placeholder', dict[key]);
       });
       document.documentElement.lang = lang;
-      document.getElementById('langBtn').textContent = lang==='en' ? 'ES' : 'EN';
+      document.querySelectorAll('.lang-opt').forEach(b=>{
+        b.classList.toggle('active', b.getAttribute('data-lang')===lang);
+      });
       try{ localStorage.setItem('mg-lang', lang); }catch(e){}
     }
     let current = 'es';
     try{ current = localStorage.getItem('mg-lang') || 'es'; }catch(e){}
-    if(current==='en') setLang('en');
+    setLang(current);
 
-    document.getElementById('langBtn').addEventListener('click',()=>{
-      current = current==='en' ? 'es' : 'en';
-      setLang(current);
+    document.querySelectorAll('.lang-opt').forEach(b=>{
+      b.addEventListener('click',()=>{ current = b.getAttribute('data-lang'); setLang(current); });
     });
 
     /* ---------- Mobile menu ---------- */
