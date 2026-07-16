@@ -659,6 +659,7 @@
     (function(){
       const SUPABASE_URL = 'https://oysxzecticnyfitgufds.supabase.co';
       const SUPABASE_KEY = 'sb_publishable_HVdX8ZgOiCdFeEKtoRgAig_ORQDnd4v';
+      const WEB3FORMS_KEY = '38e1c2af-8fb0-4692-a24c-e6d2e689611d';
       const form = document.getElementById('contactForm');
       if(!form) return;
       const btn = document.getElementById('cf-submit');
@@ -689,6 +690,23 @@
             body: JSON.stringify(payload)
           });
           if(!res.ok) throw new Error('HTTP ' + res.status);
+
+          /* Aviso por email a Macarena. Va aparte: si fallara, el mensaje ya quedó
+             guardado en Supabase, así que no se pierde nada ni molesta a quien escribió. */
+          fetch('https://api.web3forms.com/submit', {
+            method:'POST',
+            headers:{'Content-Type':'application/json','Accept':'application/json'},
+            body: JSON.stringify({
+              access_key: WEB3FORMS_KEY,
+              subject: 'Nuevo mensaje desde macarenagallo.com',
+              from_name: 'Formulario macarenagallo.com',
+              name: payload.nombre,
+              email: payload.email,
+              replyto: payload.email,
+              message: payload.mensaje
+            })
+          }).catch(()=>{});
+
           status.textContent = T('¡Gracias! Te leeré pronto.','Thank you! I\'ll read it soon.');
           status.classList.add('ok');
           form.reset();
