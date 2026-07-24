@@ -687,21 +687,11 @@
         status.className = 'cf-status';
         status.textContent = '';
         try{
-          const res = await fetch(SUPABASE_URL + '/rest/v1/mensajes', {
-            method:'POST',
-            headers:{
-              'apikey': SUPABASE_KEY,
-              'Authorization': 'Bearer ' + SUPABASE_KEY,
-              'Content-Type':'application/json',
-              'Prefer':'return=minimal'
-            },
-            body: JSON.stringify(payload)
-          });
-          if(!res.ok) throw new Error('HTTP ' + res.status);
-
-          /* Aviso por email a Macarena. Va aparte: si fallara, el mensaje ya quedó
-             guardado en Supabase, así que no se pierde nada ni molesta a quien escribió. */
-          fetch('https://api.web3forms.com/submit', {
+          /* Dos vías en paralelo: aviso por correo a Macarena + guardado en Supabase.
+             Con que UNA funcione, el mensaje llega. Así, si Supabase está pausado
+             (el plan gratis pausa por inactividad), el correo igual sale y quien
+             escribió no ve un error. */
+          const enviarCorreo = fetch('https://api.web3forms.com/submit', {
             method:'POST',
             headers:{'Content-Type':'application/json','Accept':'application/json'},
             body: JSON.stringify({
@@ -713,7 +703,20 @@
               replyto: payload.email,
               message: payload.mensaje
             })
-          }).catch(()=>{});
+          });
+          const guardarEnBase = fetch(SUPABASE_URL + '/rest/v1/mensajes', {
+            method:'POST',
+            headers:{
+              'apikey': SUPABASE_KEY,
+              'Authorization': 'Bearer ' + SUPABASE_KEY,
+              'Content-Type':'application/json',
+              'Prefer':'return=minimal'
+            },
+            body: JSON.stringify(payload)
+          });
+          const [resCorreo, resBase] = await Promise.allSettled([enviarCorreo, guardarEnBase]);
+          const salioBien = r => r.status === 'fulfilled' && r.value && r.value.ok;
+          if(!salioBien(resCorreo) && !salioBien(resBase)) throw new Error('ambas vias fallaron');
 
           status.textContent = T('¡Gracias! Te leeré pronto.','Thank you! I\'ll read it soon.');
           status.classList.add('ok');
